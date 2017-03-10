@@ -1,0 +1,35 @@
+how to create a maven project:
+------------------------------
+for server:
+-----------
+new project -> maven -> Maven Archetype -> jersey (in the search option) -> 
+(scroll down) jersey-quickstart-webapp (select the one with group id: org.glassfish.jersey.archetypes) ->
+example projectname: hwsrv
+example groupid: edu.asu.cse564.scratch.greeting -> finish
+
+how to run the application:
+---------------------------
+1. click on build icon
+2. click on the run button - select glassfish server 4.1.1
+-----------------------------------------------------------
+glassfish server access: http://localhost:4848/
+once loaded: go to applications - see the list of servers activated
+-------------------------------------------------------------------
+folder details:
+---------------
+source packages - contain the server java file
+web pages folder - contain the index.jsp that is shown in the browser
+
+for client:
+-----------
+new project -> maven -> java application 
+sample projectname:hwcli
+sample groupidL edu.asu.cse564.scratch.greeting -> finish
+
+
+go to pom.xml of client and add dependency from mvnrepository (https://mvnrepository.com/artifact/org.slf4j/slf4j-api/1.7.22) between <dependencies>  </dependencies> tag
+press run 
+error from app.java will be gone
+in the client file, give the correct localhost server address: 
+http://localhost:8080/*Server Name*/*url-pattern from web.xml* ;"http://localhost:8080/*Server Name*/*url-pattern from web.xml*/*client path name*
+example: "http://localhost:8080/RestServer/webapi" ; "http://localhost:8080/RestServer/webapi/myresources"
