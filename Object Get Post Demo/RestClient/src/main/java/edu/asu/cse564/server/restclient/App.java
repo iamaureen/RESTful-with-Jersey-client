@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.UniformInterfaceException;
 
 
 /**
@@ -52,6 +53,12 @@ public class App {
 
 			System.out.println("Server response : ");
 			System.out.println(output);
+                        
+                        
+                        //get student object 
+                        webResource = client.resource(BASE_URI).path("xmlServices").path("print/maureen");
+                        Student stu = webResource.accept(MediaType.APPLICATION_XML).get(Student.class);
+                        System.out.println("<get object from client> :: " +stu.getFirstName());
 
 		} catch (Exception e) {
 
@@ -64,5 +71,8 @@ public class App {
         
         
     }
+    
+ 
+    
     
 }
